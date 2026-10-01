@@ -5,7 +5,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 ROOT=Path(__file__).resolve().parent
-DB=Path(os.environ.get('PORTFOLIO_DB',ROOT/'data/inquiries.sqlite3'))
+DB=Path(os.environ.get('port_DB',ROOT/'data/inquiries.sqlite3'))
 DB.parent.mkdir(parents=True,exist_ok=True)
 SESSIONS={}
 def db():

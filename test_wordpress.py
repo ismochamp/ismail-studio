@@ -17,7 +17,7 @@ print('PASS: missing nonce rejected')
 data=dict(action='ih_submit',ih_nonce=nonce,name='TEST FIXTURE — inquiry integration check',email='test@example.invalid',service='integration',message='TEST FIXTURE: Verify WordPress inquiry persistence and review.',consent='yes')
 assert 'Your inquiry is saved' in post('/wp-admin/admin-post.php',data);print('PASS: valid form persisted and confirmation shown')
 password=dict(line.split('=',1) for line in (Path(__file__).parent/'.local.env').read_text().splitlines())['WP_ADMIN_PASSWORD']
-get('/wp-login.php');post('/wp-login.php',{'log':'portfolio_admin','pwd':password,'wp-submit':'Log In','redirect_to':base+'/wp-admin/','testcookie':'1'})
+get('/wp-login.php');post('/wp-login.php',{'log':'port_admin','pwd':password,'wp-submit':'Log In','redirect_to':base+'/wp-admin/','testcookie':'1'})
 inbox=get('/wp-admin/admin.php?page=ih-inquiries');assert data['name'] in inbox;print('PASS: authenticated staff inbox shows persisted inquiry')
 record=re.search(r'<div style="background:white[^>]*>.*?TEST FIXTURE.*?</form></div>',inbox,re.S).group(0)
 ident=value(record,'id');update_nonce=value(record,'_wpnonce')

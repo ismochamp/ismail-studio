@@ -6,7 +6,7 @@ require '/var/www/html/wp-load.php';
 require_once ABSPATH.'wp-admin/includes/upgrade.php';
 require_once ABSPATH.'wp-admin/includes/plugin.php';
 add_filter('pre_wp_mail',function(){return false;});
-if(!is_blog_installed()){wp_install('Ismail Habib','portfolio_admin','admin@example.invalid',false,'',getenv('PORTFOLIO_ADMIN_PASSWORD'));}
+if(!is_blog_installed()){wp_install('Ismail Habib','port_admin','admin@example.invalid',false,'',getenv('port_ADMIN_PASSWORD'));}
 update_option('siteurl','http://127.0.0.1:8187');
 update_option('home','http://127.0.0.1:8187');
 update_option('permalink_structure','/%postname%/');

@@ -28,7 +28,7 @@ The first test attempt exposed an HTML-entity decoding mistake in the test’s e
 
 ## Limits
 
-No public deployment, deliverability, load, penetration, formal accessibility or conversion testing is claimed. Browser visual checks and screenshots are recorded separately by the portfolio assembly workflow. Tests verify local functionality, not business impact.
+No public deployment, deliverability, load, penetration, formal accessibility or conversion testing is claimed. Browser visual checks and screenshots are recorded separately by the port assembly workflow. Tests verify local functionality, not business impact.
 
 ## Additional browser verification
 

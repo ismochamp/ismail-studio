@@ -9,7 +9,7 @@ class ServiceTests(unittest.TestCase):
  def setUpClass(c):
   c.temp=tempfile.TemporaryDirectory();c.db=Path(c.temp.name)/'test.sqlite3'
   with socket.socket() as s:s.bind(('127.0.0.1',0));c.port=s.getsockname()[1]
-  c.proc=subprocess.Popen([sys.executable,str(ROOT/'app.py')],env={**os.environ,'PORT':str(c.port),'PORTFOLIO_DB':str(c.db)},stdout=subprocess.DEVNULL)
+  c.proc=subprocess.Popen([sys.executable,str(ROOT/'app.py')],env={**os.environ,'PORT':str(c.port),'port_DB':str(c.db)},stdout=subprocess.DEVNULL)
   c.base=f'http://127.0.0.1:{c.port}'
   for i in range(50):
    try:build_opener().open(c.base+'/health',timeout=1);break
